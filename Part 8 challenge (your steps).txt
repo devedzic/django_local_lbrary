@@ -1,0 +1,13 @@
+@property is_on_loan
+makemigrations, migrate
+
+class LoanedBooksListView(PermissionRequiredMixin, generic.ListView)
+
+urlpatterns += [   
+    path('loaned-books/', views.LoanedBooksListView.as_view(), name='all-borrowed'),
+]
+
+/catalog/templates/catalog/bookinstance_list_all_borrowed.html
+
+Add the staff <div> to the sidebar through /locallibrary/catalog/templates/base_generic.html
+
